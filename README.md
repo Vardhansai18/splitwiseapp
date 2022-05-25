@@ -1,1 +1,2 @@
-# splitwiseapp
+# CBFriendsCost
+CB Project
