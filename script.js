@@ -2,7 +2,6 @@
 import { BinaryHeap } from './heap.js';
 
 onload = function () {
-    // create a network
     let curr_data;
     const container = document.getElementById('mynetwork');
     const container2 = document.getElementById('mynetwork2');
@@ -43,14 +42,12 @@ onload = function () {
     function createData(){
         const sz = Math.floor(Math.random() * 8) + 2;
 
-        // Adding people to nodes array
         let nodes = [];
         for(let i=1;i<=sz;i++){
             nodes.push({id:i, label:"Person "+i})
         }
         nodes = new vis.DataSet(nodes);
 
-        // Dynamically creating edges with random amount to be paid from one to another friend
         const edges = [];
         for(let i=1;i<=sz;i++){
             for(let j=i+1;j<=sz;j++){
@@ -90,7 +87,6 @@ onload = function () {
         let data = curr_data;
         const sz = data['nodes'].length;
         const vals = Array(sz).fill(0);
-        // Calculating net balance of each person
         for(let i=0;i<data['edges'].length;i++) {
             const edge = data['edges'][i];
             vals[edge['to'] - 1] += parseInt(edge['label']);
